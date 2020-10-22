@@ -1,7 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
+import GoogleForm from "./components/Form";
 
-class App extends Component {
-  render() {
+function App() {
+  return (
+    <>
+      <GoogleForm />
+    </>
+  );
 }
 
 export default App;

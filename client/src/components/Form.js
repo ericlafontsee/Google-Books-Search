@@ -29,3 +29,6 @@ googleSearch = () => {
     )
   }
 }
+
+export default GoogleForm;
+

@@ -17,6 +17,8 @@ app.get("*", function(req, res) {
 
 app.use(routes);
 
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks", { useNewUrlParser: true });
+
 app.listen(PORT, function() {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
