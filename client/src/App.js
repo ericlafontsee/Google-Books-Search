@@ -12,7 +12,6 @@ function App() {
           <Route exact path={process.env.PUBLIC_URL + "/books"} component={Search} />
           <Route exact path={process.env.PUBLIC_URL + "/books/:id"} component={Saved} />
           <Route path={process.env.PUBLIC_URL + "*"} component={Search} /> 
-        <Books />
         </Switch>
       </div>
       </Router>
