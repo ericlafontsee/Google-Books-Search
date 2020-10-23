@@ -9,8 +9,8 @@ function App() {
         <div>
         <Switch>
           <Route exact path={process.env.PUBLIC_URL + "/"} component={Search} />
-          <Route exact path={process.env.PUBLIC_URL + "/books"} component={Search} />
-          <Route exact path={process.env.PUBLIC_URL + "/books/:id"} component={Saved} />
+          <Route exact path={process.env.PUBLIC_URL + "/search"} component={Search} />
+          <Route exact path={process.env.PUBLIC_URL + "/saved"} component={Saved} />
           <Route path={process.env.PUBLIC_URL + "*"} component={Search} /> 
         </Switch>
       </div>
