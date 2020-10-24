@@ -1,78 +1,52 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from 'react';
+import Navbar from "../components/Navbar";
+import Jumbotron from "../components/Jumbotron";
+import Container from "../components/Container"
+import Card from "../components/Card"
 import API from "../utils/API";
-import { Col, Row, Button, Card, Container, Form } from "react-bootstrap";
 
-function Search() {
-  const [book, setBook] = useState("");
-  const [result, setResult] = useState([]);
+const Search = () => {
+  const [books, setBooks] = useState([]);
+  const [result, setResult] = useState({});
 
-  function handleChange(event) {
-    setBook(event.target.value);
-    console.log(book);
+  useEffect(() => {
+    loadBooks("");
+  }, []);
+
+  function loadBooks(search) {
+    API.getGoogle(search)
+      .then((response) => {
+        setBooks(response.data.items);
+      }).catch(err => console.log(err));
   }
 
-  function loadBooks(book) {
-    API.getGoogle(book)
-      .then((res) => setBook(res.data.items))
-      .catch((err) => console.log(err));
+  const handleSubmit = function (e) {
+    e.preventDefault();
+    loadBooks(result);
+    setResult("");
   }
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    API.getGoogle(book).then((res) => {
-      console.log(res);
-      setResult(res.data.items);
-    });
-  }
 
   return (
-    <>
-      <Container className="mx-auto">
-        <Form onSubmit={handleSubmit}>
-          <Form.Group>
-            <Form.Label className="mt-5">
-              <h1>Google Book Search</h1>
-            </Form.Label>
-            <input type="text" onChange={handleChange} className="form-control mt-10" id="book" placeholder="Search for Books"></input>
-            <button type="submit" className="btn btn-danger">Search</button>
-          </Form.Group>
-        </Form>
+    <div className="search">
+      <Navbar />
+      <Container>
+        <Jumbotron />
       </Container>
       <Container>
-        <Row>
-          {result.map((book) => (
-            <Col lg={6}>
-              <Card
-                className="mb-3"
-                bg="dark"
-                text="light"
-                style={{ width: "30rem" }}
-                style={{ height: "40rem" }}
-              >
-                <Card.Img
-                  src={book.volumeInfo.imageLinks.thumbnail}
-                  alt={book.title}
-                  height="300px"
-                />
-                <Card.Body>
-                  <Card.Title>{book.volumeInfo.title}</Card.Title>
-                  <Card.Text>Authors: {book.volumeInfo.authors}</Card.Text>
-                  <Button
-                    onClick={(e) => {
-                      window.location.href = book.volumeInfo.previewLink;
-                    }}
-                    variant="primary"
-                  >
-                    View
-                  </Button>
-                  <Card.Text>{book.volumeInfo.description}</Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
-          ))}
-        </Row>
+        <form className="col-lg-8" onSubmit={handleSubmit}>
+          <input className="form-control form-control-lg" type="search" placeholder="Enter Book Title" onChange={(e) => setResult(e.target.value)} />
+        </form>
       </Container>
-    </>
+      <br />
+      <Container>
+        {books.map(book => {
+          return (
+            <Card data={book.volumeInfo} key={book.id} />
+          )
+        })}
+      </Container>
+    </div>
   );
 }
 
