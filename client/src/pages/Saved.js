@@ -21,9 +21,9 @@ function Saved() {
       <Navbar />
       <Container>
         <Jumbotron />
-        {savedBooks.map((book) => {
-          return <SavedCard data={book} key={book._id} />;
-        })}
+        <div>
+        {savedBooks.map((book, index ) => <SavedCard key={index} {...book} />)}
+        </div>
       </Container>
     </div>
   );
