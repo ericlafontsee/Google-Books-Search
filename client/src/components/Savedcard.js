@@ -26,7 +26,8 @@ function Savedcard(prop) {
               <br />
             </div>
             <div className="col-lg-8">
-              <p className="card-text">Description: {prop.description}</p>
+              <h4>Description</h4>
+              <p className="card-text"> {prop.description}</p>
             </div>
           </div>
         </div>

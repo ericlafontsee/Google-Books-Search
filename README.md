@@ -1,29 +1,69 @@
-# Create React Express App
+# Google Book Search
 
-## About This Boilerplate
+## Description
+For this project, I created an application using React that will allow the user to search Google books.   
+Once the user has entered their search, the results will display and they will be presented with two options:   
+1. To view the book on Google Books
+2. To save the book to the database   
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+There is a separate saved page where the user can also view the book on Google or delete it from their saved  
+page.
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+My application is deployed to Heroku:  
 
-## Starting the app locally
+## Table Of Contents
+* [Usage](#Usage)
+* [Prerequisites](#Prerequisites)
+* [Installation](#Installation)
+* [BuiltWith](#Built-With)
+* [License](#License)
+* [Author](#Author)
+* [Questions](#Questions)
+* [Acknowledgements](#Acknowledgements )
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
+## Usage
+![image](./client/public/images/Book-Search-Demo.gif)
+
+## Built With
+React
+Node
+Express
+MongoDB
+Bootstrap  
+HTML  
+CSS  
+JavaScript  
+
+## Installation
+To install the React boilerplate code, enter the following into your root directory:
+```
+npx create-react-app Google Book Search
+```
+Install the following packages on the root level:
+```
+npm install axios mongoose express --save 
 
 ```
-npm install
+Install the following packages on the client level:
+```
+npm install react-router-dom --save
+```
+To use the Bootstrap components, import the following into the index.js file in the src folder:
+```
+import 'bootstrap/dist/css/bootstrap.min.css';
 ```
 
-This should install node modules within the server and the client folder.
 
-After both installations complete, run the following command in your terminal:
+ ## Author
+ Eric LaFontsee   
+ Email: elafontsee@gmail.com
+  
+## License
+  MIT
 
-```
-npm start
-```
-
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
-
-## Deployment (Heroku)
-
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
+## Acknowledgements
+Anthony Cooper - Helped with debugging the server.
+Collaborated with:
+* Brendon Conatser
+* Henry Parrish 
+* Miller Rich 
