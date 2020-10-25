@@ -25,14 +25,14 @@ My application is deployed to Heroku:
 ![image](./client/public/images/Book-Search-Demo.gif)
 
 ## Built With
-React
-Node
-Express
-MongoDB
-Bootstrap  
-HTML  
-CSS  
-JavaScript  
+React  
+Node  
+Express  
+MongoDB  
+Bootstrap    
+HTML    
+CSS    
+JavaScript    
 
 ## Installation
 To install the React boilerplate code, enter the following into your root directory:
