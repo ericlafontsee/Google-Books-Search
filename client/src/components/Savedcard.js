@@ -19,10 +19,10 @@ function Savedcard(prop) {
         <div className="container">
           <div className="row">
             <div className="col-lg-3">
-              <img src={prop.image} className="card-img-left" alt={prop.title} />
+              <img src={prop.image} className="card-img-center" alt={prop.title} />
               <br />
-              <a type="button" href={prop.link} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">View</a>
-              <button className="btn btn-danger" id={prop._id} onClick={() => deleteBook(prop._id)}>Delete</button>
+              <a href={prop.link} target="_blank" rel="noopener noreferrer" ><button className="btn btn-secondary">View</button></a>
+              <button className="btn delete" id={prop._id} onClick={() => deleteBook(prop._id)}>Delete</button>
               <br />
             </div>
             <div className="col-lg-8">

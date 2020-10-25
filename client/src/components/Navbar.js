@@ -2,9 +2,9 @@ import React from "react";
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg">
       <ul className="nav">
-        <li className="nav-item active">
+        <li className="nav-item active ">
           <a className="nav-link" href="/">Search</a>
         </li>
         <p>  |  </p>

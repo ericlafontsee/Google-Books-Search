@@ -30,7 +30,7 @@ function Card(prop) {
   }
   return (
     <div className="card col-lg-8">
-      <div className="card-body">
+      <div className="card-body ">
         <h2 className="card-title row">{props.title}</h2>
         <h4 className="card-text row">Authors: {props.authors}</h4>
         <div className="container">
@@ -38,12 +38,12 @@ function Card(prop) {
             <div className="col-lg-auto">
               <img src={image} className="card-img-left" alt={props.title} />
               <br />
-              <a type="button" href={props.previewLink} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">View</a>
-              <button className="btn btn-success" onClick={() => addCard()}>Add</button>
+              <a href={props.previewLink} target="_blank" rel="noopener noreferrer" ><button className="btn btn-secondary">View</button></a>
+              <button className="btn add" onClick={() => addCard()}>Add</button>
             </div>
             <br />
             <div className="col-lg-auto">
-              <p className="card-text">Description: {props.description}</p>
+              <p className="card-text description">Description: {props.description}</p>
               <br />
               <p className="card-text">Pages: {props.pageCount}</p>
               <br />
